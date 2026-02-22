@@ -1,5 +1,13 @@
 # TasDyn-ATC-System 📡
 
+![Arma 3](https://img.shields.io/badge/Arma%203-Mod-green)
+![Build System](https://img.shields.io/badge/Built%20With-HEMTT-blue)
+![Vue.js](https://img.shields.io/badge/Vue.js-35495E?style=flat&logo=vuedotjs&logoColor=4FC08D)
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=flat&logo=nodedotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
+![Discord.js](https://img.shields.io/badge/Discord.js-5865F2?style=flat&logo=discord&logoColor=white)
+![License](https://img.shields.io/badge/License-APL--SA-orange)
+
 
 
 An integrated, real-time Air Traffic Control (ATC) and airspace monitoring system for Arma 3. The Tasman Dynamics ATC extracts live telemetry from the game engine and broadcasts it to a tactical web interface and Discord, providing command elements with total airspace visibility.
@@ -8,8 +16,8 @@ An integrated, real-time Air Traffic Control (ATC) and airspace monitoring syste
 
 This system is decoupled into four primary components:
 
-1. **Arma 3 Server Mod (SQF):** Sweeps the `CfgVehicles` for active aircraft, extracting coordinates, altitude, speed, heading, and pilot data.
-2. **Backend Bridge (Node.js/Express):** A lightweight server that receives HTTP POST data from the Arma 3 server and broadcasts it instantly via WebSockets.
+1. **Arma 3 Server Mod (SQF):** Sweeps the `CfgVehicles` for active aircraft, extracting coordinates, altitude, speed, heading, and pilot data. Built using HEMTT.
+2. **Backend Bridge (Node.js/Express):** A lightweight TypeScript server that receives HTTP POST data from the Arma 3 server and broadcasts it instantly via WebSockets.
 3. **STRATCOM WebApp (Vue 3/Vite):** A dark-mode, CRT-styled frontend utilizing Jetelain's `GameMapStorage` architecture to render live radar blips over high-resolution, custom-tiled map extracts natively using Leaflet (`L.CRS.Simple`).
 4. **TasDyn AI (Discord.js):** A connected bot that monitors the WebSocket feed and announces takeoffs, landings, and radar losses in a designated Discord channel.
 
@@ -20,6 +28,7 @@ This system is decoupled into four primary components:
 * **Node.js** (v18+ recommended)
 * **Arma 3 Dedicated Server or Listen Server**
 * **extREST** or **ArmaRequests** (Arma 3 Server-side HTTP extension)
+* **HEMTT** (For building the Arma 3 mod PBO)
 * **Jetelain's GameMapStorage Tools** (For extracting custom map topography and serving web tiles)
 
 ---
