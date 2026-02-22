@@ -1,8 +1,8 @@
-# Tasman Dynamics ATC System 📡
+# TasDyn-ATC-System 📡
 
-[Image of a system architecture diagram showing an Arma 3 game server communicating via WebSockets to a Node.js backend and a Vue 3 frontend]
 
-An integrated, real-time Air Traffic Control (ATC) and airspace monitoring system for Arma 3. Tasman Dynamics ATC extracts live telemetry from the game engine and broadcasts it to a tactical web interface and Discord, providing command elements with total airspace visibility.
+
+An integrated, real-time Air Traffic Control (ATC) and airspace monitoring system for Arma 3. The Tasman Dynamics ATC extracts live telemetry from the game engine and broadcasts it to a tactical web interface and Discord, providing command elements with total airspace visibility.
 
 ## ⚙️ System Architecture
 
@@ -10,7 +10,7 @@ This system is decoupled into four primary components:
 
 1. **Arma 3 Server Mod (SQF):** Sweeps the `CfgVehicles` for active aircraft, extracting coordinates, altitude, speed, heading, and pilot data.
 2. **Backend Bridge (Node.js/Express):** A lightweight server that receives HTTP POST data from the Arma 3 server and broadcasts it instantly via WebSockets.
-3. **STRATCOM WebApp (Vue 3/Vite):** A dark-mode, CRT-styled frontend utilizing Jetelain's `leaflet.arma3map` to render live radar blips over high-resolution, custom-tiled map extracts natively.
+3. **STRATCOM WebApp (Vue 3/Vite):** A dark-mode, CRT-styled frontend utilizing Jetelain's `GameMapStorage` architecture to render live radar blips over high-resolution, custom-tiled map extracts natively using Leaflet (`L.CRS.Simple`).
 4. **TasDyn AI (Discord.js):** A connected bot that monitors the WebSocket feed and announces takeoffs, landings, and radar losses in a designated Discord channel.
 
 ---
@@ -20,7 +20,7 @@ This system is decoupled into four primary components:
 * **Node.js** (v18+ recommended)
 * **Arma 3 Dedicated Server or Listen Server**
 * **extREST** or **ArmaRequests** (Arma 3 Server-side HTTP extension)
-* **@Arma3MapExporter** (For extracting custom map topography and generating web tiles)
+* **Jetelain's GameMapStorage Tools** (For extracting custom map topography and serving web tiles)
 
 ---
 
