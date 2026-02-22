@@ -59,11 +59,15 @@ Configure your backend IP and port in frontend/public/web.json.
 3. Load the compiled mod on your server.
 4. Ensure your server is running an HTTP extension (like extREST) and that the IP/Port in initServer.sqf matches your Node.js backend.
 
+---
+
 ## 🗺️ Custom Map Extraction Pipeline
 To use custom modded maps, you must extract the topography from the Arma 3 engine using Jetelain's updated GameMapStorage ecosystem.
 1. **Extract & Tile:** Utilize Jetelain's exporter tools. Open your desired terrain in the Eden Editor, and follow the mod's specific extraction commands to generate your tile pyramid.
 2. **Host:** The exporter will generate a folder containing subfolders of tiles (0, 1, 2, etc.) and a config.json file. Move this entire folder into backend/public/maps/<worldName>/.
 3. **Deploy:** When the Arma 3 server initializes, the frontend will automatically fetch the new config.json and seamlessly load the correct terrain and coordinate system via Leaflet and GameMapStorage.
+
+---
 
 ## 🛡️ License
 This project is licensed under the Arma Public License Share Alike (APL-SA).
